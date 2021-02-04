@@ -26,8 +26,8 @@
     <p>2.- Extract the file '<b>Libellule.zip</b>' wherever you want.</p>
     <p>3.- Open the exe '<b>Libellule.exe</b>'</p>
     <p>4.- Create a new profile if you have none of.</p>
-    <ul><li>Command: '<b>createprofile</b> {profile name} {LoL game location}' as example: <b>createprofile</b> lolnormal C:\Riot Games\League of Legends\Game</li></ul>
-    <p>5.- Type the command: '<b>run</b> {profile name}' as example: <b>run</b> lolnormal</p>
+    <ul><li>Command: '<b>createprofile</b> {profile name} {LoL game location}' for example: <b>createprofile</b> lolnormal C:\Riot Games\League of Legends\Game</li></ul>
+    <p>5.- Type the command: '<b>run</b> {profile name}' for example: <b>run</b> lolnormal</p>
 	<h3>Suggest</h3>
 	<p>If you don't want to type the command '<b>run</b> {profile name}' every time you open the program,
     you'll have to create a .bat file and write this: <b>Libellule.exe {profile name}</b> in it
