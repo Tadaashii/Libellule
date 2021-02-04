@@ -34,7 +34,7 @@
 	and save it in the same location that you have the program.</p>
     <h3>Notes</h3>
     <p>1.- This program is like a mod, but I made it because 
-        <a href="https://github.com/LoL-Fantome/Fantome">Fantome</a> and <a href="https://github.com/moonshadow565/lolcustomskin-tools/tree/master/lcs-manager">LolCustomSkin</a> aren't work properly.</p>
+        <a href="https://github.com/LoL-Fantome/Fantome">Fantome</a> and <a href="https://github.com/moonshadow565/lolcustomskin-tools/tree/master/lcs-manager">LolCustomSkin</a> don't work properly.</p>
     <p>2.- If you don't do airblade, you'll see this animation:</p>
     <p align="center"><img src="https://i.imgur.com/1UT1DYC.gif" weight="100%" height="365px"></p>
 </p>
