@@ -13,14 +13,16 @@ namespace Libellule
     class Program
     {
 
+        private static readonly string VERSION = "v1.1.0";
+
         public readonly string _exeLocation = Path.GetDirectoryName( Assembly.GetEntryAssembly().Location );
 
         public Profile actualProfile;
 
         public void Start( string[] args )
         {
-            Title = "Libellule v1.0.0";
-            WriteLine( "Libellule [v1.0.0]" );
+            Title = "Libellule";
+            WriteLine( $"Libellule [{VERSION}]" );
             Dictionary<string , Profile> profiles = new Dictionary<string , Profile>();
             DirectoryInfo directoryInfo = Directory.CreateDirectory( this._exeLocation + @"\profiles" );
             foreach ( DirectoryInfo info in directoryInfo.GetDirectories() )
@@ -51,9 +53,7 @@ namespace Libellule
                     StartOverlay();
                 }
                 WriteLine( $"The profile {profileName} does not exist or have any issues. " );
-                WriteLine( "Press any key to exit..." );
-                ReadKey();
-                Environment.Exit( 0 );
+                PressAnyKey();
             }
             if ( profiles.Count == 0 )
             {
@@ -116,7 +116,7 @@ namespace Libellule
                         case "about":
                             WriteLine( "Libellule" );
                             WriteLine( "Author: Tadaashii" );
-                            WriteLine( "Version: 1.0.0" );
+                            WriteLine( $"Version: {VERSION}" );
                             WriteLine( "Github: github.com/Tadaashii" );
                             break;
 
@@ -138,11 +138,19 @@ namespace Libellule
                 this.actualProfile.WriteFile();
             }
             Clear();
-            WriteLine( "Libellule [v1.0.0]" );
+            WriteLine( $"Libellule [{VERSION}]" );
             OverlayPatcher patcher = new OverlayPatcher( this._exeLocation + @"\lolcustomskin-sharp.bin" );
             patcher._exeLocation = this.actualProfile._lolLocation;
             patcher.Start( this.actualProfile._folderLocation + @"\file\" , OnPatcherMessage , OnPatcherError );
             patcher.Join();
+            PressAnyKey();
+        }
+
+        private void PressAnyKey()
+        {
+            WriteLine( "Press any key to exit..." );
+            ReadKey();
+            Environment.Exit( 0 );
         }
 
         private string GetLolLocation( string[] array )
@@ -180,7 +188,11 @@ namespace Libellule
         }
 
         private static void OnPatcherError( Exception exception )
-            => WriteLine( "[ERROR] PATCHER: {0}" , exception );
+        {
+            ForegroundColor = ConsoleColor.Red;
+            WriteLine( "[ERROR] PATCHER: {0}" , exception );
+            ForegroundColor = ConsoleColor.Gray;
+        }
 
         private static void OnPatcherMessage( string message )
             => WriteLine( "[INFO] PATCHER: {0}" , message );

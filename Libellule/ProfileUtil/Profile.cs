@@ -66,8 +66,7 @@ namespace Libellule.ProfileUtil
             profile._profileName = profileName;
             profile._folderLocation = folderLocation;
             profile._lolLocation = lolLocation;
-            profile._lastModified = File.GetLastWriteTime( lolLocation +
-                @"\DATA\FINAL\Champions\Yasuo.wad.client" ).ToString();
+            profile._lastModified = profile.GetLolWadLastWriteTime();
             Console.WriteLine( $"Profile {profileName} has been created successfully." );
             return profile;
         }
