@@ -9,8 +9,8 @@
             <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/Tadaashii/Libellule/total?style=for-the-badge">
         </a>
     </p> 	
-    <p align="center">This program allows you to play with the old bugged airblade animation on yasuo</p>
-    <p align="center">It works with all yasuo's skins.</p>
+    <p align="center">This program allows you to play with the old bugged airblade animation on Yasuo</p>
+    <p align="center">It works with all Yasuo's skins.</p>
     <p align="center">Unless they add a new skin and change the way of the R animation like nightbringer.</p>
 </p>
 
@@ -33,12 +33,11 @@
     you'll have to create a .bat file and write this: <b>Libellule.exe {profile name}</b> in it
 	and save it in the same location that you have the program.</p>
     <h3>Notes</h3>
-    <p>1.- This program is like a mod, but I made it because 
+    <p>1.- This program is a mod, but I made it because 
         <a href="https://github.com/LoL-Fantome/Fantome">Fantome</a> and <a href="https://github.com/moonshadow565/lolcustomskin-tools/tree/master/lcs-manager">LolCustomSkin</a> don't work properly.</p>
     <p>2.- If you don't do airblade, you'll see this animation:</p>
     <p align="center"><img src="https://i.imgur.com/1UT1DYC.gif" weight="100%" height="365px"></p>
 </p>
-
 <p>
     <h2>Preview</h2>
     <p align="center">
