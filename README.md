@@ -33,8 +33,9 @@
     you'll have to create a .bat file and write this: <b>Libellule.exe {profile name}</b> in it
 	and save it in the same location that you have the program.</p>
     <h3>Notes</h3>
-    <p>1.- This program is a mod, but I made it because 
-        <a href="https://github.com/LoL-Fantome/Fantome">Fantome</a> and <a href="https://github.com/moonshadow565/lolcustomskin-tools/tree/master/lcs-manager">LolCustomSkin</a> don't work properly.</p>
+    <p>1.- If you don't want to use this program, you can use 
+        <a href="https://github.com/LoL-Fantome/Fantome">Fantome</a> or <a href="https://github.com/moonshadow565/lolcustomskin-tools/">LolCustomSkin</a>
+	<ul><li> Mod link: <a href="https://github.com/Tadaashii/Libellule/releases/download/1.1.1/Old.Airblade.Animation.Yasuo.fantome">Download Here</a></li></ul>
     <p>2.- If you don't do airblade, you'll see this animation:</p>
     <p align="center"><img src="https://i.imgur.com/1UT1DYC.gif" weight="100%" height="365px"></p>
 </p>
