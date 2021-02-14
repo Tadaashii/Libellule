@@ -13,7 +13,7 @@ namespace Libellule
     class Program
     {
 
-        private static readonly string VERSION = "v1.1.0";
+        private static readonly string VERSION = "v1.1.1";
 
         public readonly string _exeLocation = Path.GetDirectoryName( Assembly.GetEntryAssembly().Location );
 
