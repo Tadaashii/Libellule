@@ -1,5 +1,10 @@
 <p>
 	<h1 align="center">Libellule</h1>
+	<p align="center">
+		<a href="https://youtu.be/2y5EsleH38g"><b>TUTORIAL</b></a>
+	    |
+		<a href="https://youtu.be/gBXA2yFpxnc"><b>DEMO</b></a>
+	</p>
     <p align="center">
         <a href="https://github.com/Tadaashii/Libellule/releases">
             <img alt="GitHub release (latest by date)" 
@@ -12,12 +17,6 @@
     <p align="center">This program allows you to play with the old bugged airblade animation on Yasuo</p>
     <p align="center">It works with all Yasuo's skins.</p>
     <p align="center">Unless they add a new skin and change the way of the R animation like nightbringer.</p>
-</p>
-
-<p>
-    <h2>Requeriment</h2>
-    <p>This application requires <b>.NET Core v3.1</b> runtime in order to run.</p>
-    <ul><li><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.11-windows-x64-installer">Windows x64</a></li></ul>
 </p>
 
 <p>
