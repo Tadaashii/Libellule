@@ -8,7 +8,7 @@ namespace Libellule.ProfileUtil
 
         public string _profileName, _folderLocation, _lolLocation, _lastModified;
 
-        internal Profile( string profileName, string folderLocation , string lolLocation , string lastModified )
+        internal Profile( string profileName, string folderLocation, string lolLocation , string lastModified )
         {
             this._profileName = profileName;
             this._folderLocation = folderLocation;
@@ -24,7 +24,6 @@ namespace Libellule.ProfileUtil
             using ( var writer = new StreamWriter( this._folderLocation + @"\" + this._profileName + ".profile" ) )
             {
                 writer.WriteLine( this._profileName );
-                writer.WriteLine( this._folderLocation );
                 writer.WriteLine( this._lolLocation );
                 writer.WriteLine( this._lastModified );
             }
@@ -47,7 +46,7 @@ namespace Libellule.ProfileUtil
                 {
                     return new Profile(
                         reader.ReadLine(),
-                        reader.ReadLine(),
+                        fileInfo.DirectoryName,
                         reader.ReadLine(),
                         reader.ReadLine()
                         );
@@ -62,6 +61,7 @@ namespace Libellule.ProfileUtil
 
         public static Profile CreateProfile( string profileName , string folderLocation , string lolLocation )
         {
+            Console.WriteLine( "Creating profile..." );
             Profile profile = new Profile();
             profile._profileName = profileName;
             profile._folderLocation = folderLocation;

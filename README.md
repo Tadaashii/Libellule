@@ -1,9 +1,9 @@
 ![Libellule](https://i.imgur.com/LdUHC9k.png)
 <p>
 	<p align="center">
-		<a href="https://youtu.be/2y5EsleH38g"><b>INSTALLATION</b></a>
-	    |
-		<a href="https://youtu.be/gBXA2yFpxnc"><b>DEMO</b></a>
+		<a href="https://youtu.be/2y5EsleH38g?t=179"><b>INSTALLATION</b></a>
+		|
+		<a href="https://youtu.be/gBXA2yFpxnc"><b>DEMOSTRATION</b></a>
 	</p>
     <p align="center">
         <a href="https://github.com/Tadaashii/Libellule/releases">

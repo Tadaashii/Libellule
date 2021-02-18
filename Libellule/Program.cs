@@ -13,9 +13,7 @@ namespace Libellule
     class Program
     {
 
-        private static readonly string VERSION = "v1.1.1";
-
-        public readonly string _exeLocation = Path.GetDirectoryName( Assembly.GetEntryAssembly().Location );
+        private static readonly string VERSION = "v1.1.2";
 
         public Profile actualProfile;
 
@@ -24,16 +22,16 @@ namespace Libellule
             Title = "Libellule";
             WriteLine( $"Libellule [{VERSION}]" );
             Dictionary<string , Profile> profiles = new Dictionary<string , Profile>();
-            DirectoryInfo directoryInfo = Directory.CreateDirectory( this._exeLocation + @"\profiles" );
+            DirectoryInfo directoryInfo = Directory.CreateDirectory( "profiles" );
             foreach ( DirectoryInfo info in directoryInfo.GetDirectories() )
             {
-                FileInfo fileInfo = getProfileFile( info );
+                FileInfo fileInfo = GetProfileFile( info );
                 if ( fileInfo != null )
                 {
                     Profile profile = Profile.LoadProfile( fileInfo );
                     if ( profile == null )
                         continue;
-                    if ( !isValidLocation( profile._lolLocation ) )
+                    if ( !IsValidLocation( profile._lolLocation ) )
                     {
                         ForegroundColor = ConsoleColor.Red;
                         WriteLine( $"The profile {fileInfo.Name} has an invalid lol location." );
@@ -78,7 +76,7 @@ namespace Libellule
                                     continue;
                                 }
                                 string location = GetLolLocation( consoleLine );
-                                if ( !isValidLocation( location ) )
+                                if ( !IsValidLocation( location ) )
                                 {
                                     WriteLine( $"The location {location} is not valid" );
                                     WriteLine( "You need to select a valid league of legends location." );
@@ -139,7 +137,7 @@ namespace Libellule
             }
             Clear();
             WriteLine( $"Libellule [{VERSION}]" );
-            OverlayPatcher patcher = new OverlayPatcher( this._exeLocation + @"\lolcustomskin-sharp.bin" );
+            OverlayPatcher patcher = new OverlayPatcher();
             patcher._exeLocation = this.actualProfile._lolLocation;
             patcher.Start( this.actualProfile._folderLocation + @"\file\" , OnPatcherMessage , OnPatcherError );
             patcher.Join();
@@ -172,7 +170,7 @@ namespace Libellule
             ForegroundColor = ConsoleColor.Gray;
         }
 
-        private FileInfo getProfileFile( DirectoryInfo info )
+        private FileInfo GetProfileFile( DirectoryInfo info )
         {
             foreach ( var fileInfo in info.GetFiles() )
                 if ( fileInfo.Extension == ".profile" )
@@ -180,7 +178,7 @@ namespace Libellule
             return null;
         }
 
-        private bool isValidLocation( string lolLocation )
+        private bool IsValidLocation( string lolLocation )
         {
             return File.Exists( lolLocation + @"\League of Legends.exe" )
                 && File.Exists( lolLocation + @"\DATA\FINAL\Champions\Yasuo.wad.client" );

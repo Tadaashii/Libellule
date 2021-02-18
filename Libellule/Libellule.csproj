@@ -4,16 +4,36 @@
 		<OutputType>Exe</OutputType>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<Platforms>x64</Platforms>
-		<Version>1.1.0</Version>
-		<FileVersion>1.1.0</FileVersion>
+		<Version>1.1.2</Version>
+		<FileVersion>1.1.2</FileVersion>
 		<Authors>Tadaashii</Authors>
 		<RepositoryUrl>https://github.com/Tadaashii/Libellule</RepositoryUrl>
+		<ApplicationIcon>resources\libellule-icon.ico</ApplicationIcon>
+		<Configurations>Debug;Release;ReleasePortable</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<WarningsAsErrors />
+		<SelfContained>false</SelfContained>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<PublishSingleFile>true</PublishSingleFile>
+		<PublishReadyToRunShowWarnings>true</PublishReadyToRunShowWarnings>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePortable|x64'">
+		<WarningsAsErrors />
+		<SelfContained>true</SelfContained>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<PublishSingleFile>true</PublishSingleFile>
+		<PublishTrimmed>true</PublishTrimmed>
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<PublishReadyToRunShowWarnings>true</PublishReadyToRunShowWarnings>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="ZstdSharp" Version="0.7.1" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
 		<Reference Include="LoLCustomSharp">
 			<HintPath>LoLCustomSharp.dll</HintPath>
