@@ -1,7 +1,9 @@
 ![Libellule](https://i.imgur.com/LdUHC9k.png)
 <p>
 	<p align="center">
-		<a href="https://youtu.be/2y5EsleH38g?t=179"><b>INSTALLATION</b></a>
+		<a href="https://youtu.be/srUDfNJUUDo"><b>INSTALLATION LIBELLULE</b></a>
+		|
+		<a href="https://youtu.be/2y5EsleH38g"><b>INSTALLATION FANTOME-LCS</b></a>
 		|
 		<a href="https://youtu.be/gBXA2yFpxnc"><b>DEMOSTRATION</b></a>
 	</p>
@@ -14,7 +16,7 @@
             <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/Tadaashii/Libellule/total?style=for-the-badge">
         </a>
     </p> 	
-    <p align="center">This program allows you to play with the old bugged airblade animation on Yasuo</p>
+    <p align="center">This program(mod) allows you to play with the old bugged airblade animation on Yasuo</p>
     <p align="center">It works with all Yasuo's skins.</p>
     <p align="center">Unless they add a new skin and change the way of the R animation like nightbringer.</p>
 </p>
