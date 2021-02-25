@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Reflection;
 using System.Collections.Generic;
 using static System.Console;
 
@@ -13,14 +12,16 @@ namespace Libellule
     class Program
     {
 
-        private static readonly string VERSION = "v1.1.2";
+        private static readonly string version = "v1.2.0";
+
+        public static readonly string location = @"\DATA\FINAL\Champions\Yasuo.wad.client";
 
         public Profile actualProfile;
 
         public void Start( string[] args )
         {
             Title = "Libellule";
-            WriteLine( $"Libellule [{VERSION}]" );
+            WriteLine( $"Libellule [{version}]" );
             Dictionary<string , Profile> profiles = new Dictionary<string , Profile>();
             DirectoryInfo directoryInfo = Directory.CreateDirectory( "profiles" );
             foreach ( DirectoryInfo info in directoryInfo.GetDirectories() )
@@ -85,7 +86,7 @@ namespace Libellule
                                 }
                                 Profile profile = Profile.CreateProfile( profileName , directoryInfo + @"\" + profileName , location );
                                 profile.WriteFile();
-                                WadCreator.Build( profile._lolLocation , profile._folderLocation + @"\file" );
+                                WadCreator.Build( profile._lolLocation , profile._folderLocation + @"\file" , false );
                                 profiles.Add( profileName , profile );
                                 WriteLine( $"You should use: 'run {profileName}' to start the process." );
                             } else
@@ -114,7 +115,7 @@ namespace Libellule
                         case "about":
                             WriteLine( "Libellule" );
                             WriteLine( "Author: Tadaashii" );
-                            WriteLine( $"Version: {VERSION}" );
+                            WriteLine( $"Version: {version}" );
                             WriteLine( "Github: github.com/Tadaashii" );
                             break;
 
@@ -128,18 +129,19 @@ namespace Libellule
 
         public void StartOverlay()
         {
-            if ( !this.actualProfile.isTheSameDate() )
+            string folderLocation = this.actualProfile._folderLocation + @"\file";
+            bool fileExists = File.Exists( folderLocation + @"\" + location );
+            if ( !fileExists || !this.actualProfile.isTheSameDate() )
             {
-                WriteLine( "Updating file..." );
-                WadCreator.Build( this.actualProfile._lolLocation , this.actualProfile._folderLocation + @"\file" );
+                WadCreator.Build( this.actualProfile._lolLocation ,  folderLocation , fileExists );
                 this.actualProfile._lastModified = this.actualProfile.GetLolWadLastWriteTime();
                 this.actualProfile.WriteFile();
             }
             Clear();
-            WriteLine( $"Libellule [{VERSION}]" );
+            WriteLine( $"Libellule [{version}]" );
             OverlayPatcher patcher = new OverlayPatcher();
             patcher._exeLocation = this.actualProfile._lolLocation;
-            patcher.Start( this.actualProfile._folderLocation + @"\file\" , OnPatcherMessage , OnPatcherError );
+            patcher.Start( folderLocation , OnPatcherMessage , OnPatcherError );
             patcher.Join();
             PressAnyKey();
         }
@@ -185,14 +187,14 @@ namespace Libellule
 
         }
 
-        private static void OnPatcherError( Exception exception )
+        private void OnPatcherError( Exception exception )
         {
             ForegroundColor = ConsoleColor.Red;
             WriteLine( "[ERROR] PATCHER: {0}" , exception );
             ForegroundColor = ConsoleColor.Gray;
         }
 
-        private static void OnPatcherMessage( string message )
+        private void OnPatcherMessage( string message )
             => WriteLine( "[INFO] PATCHER: {0}" , message );
 
         static void Main( string[] args )
