@@ -1,3 +1,5 @@
+This method is out of date. I recommend you to use lcs 
+
 ![Libellule](https://i.imgur.com/LdUHC9k.png)
 <p>
 	<p align="center">
